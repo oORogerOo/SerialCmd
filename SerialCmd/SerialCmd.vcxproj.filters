@@ -32,5 +32,13 @@
     <ClInclude Include="cmdlineparser.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="ProcessLog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="ProcessLog.lib">
+      <Filter>资源文件</Filter>
+    </Library>
   </ItemGroup>
 </Project>

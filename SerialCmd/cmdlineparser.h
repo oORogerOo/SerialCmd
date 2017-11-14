@@ -42,6 +42,7 @@
 #include <vector>
 #include <set>
 #include <algorithm>
+#include "ProcessLog.h"
 
 namespace ccutils
 {
@@ -203,6 +204,7 @@ namespace ccutils
                 for (int i = 0; i < argc; ++i)
                 {
                     m_args.push_back(wargcv[i]);
+					ProcessLog(wargcv[i], LOGDEBUG);
                 }
                 parseArgs();
             }

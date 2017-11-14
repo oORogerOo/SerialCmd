@@ -71,8 +71,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cmdlineparser.h" />
+    <ClInclude Include="ProcessLog.h" />
     <ClInclude Include="Serial.h" />
     <ClInclude Include="StdAfx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="ProcessLog.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -30,14 +30,20 @@ bool Exefunction()
 		parser.getValStr("p", 0) == "" || parser.getValStr("b", 0) == "" || parser.getValStr("t", 0) == "" || parser.getValStr("s", 0) == "")
 	{
 		cout << "Param error,Please check." << endl;
+		ProcessLog(_T("Param error,Please check."), LOGDEBUG);
 		return FALSE;
 	}
 
 	if (AtCom.IsOpened())
 	{
+		ProcessLog(_T("AtCom.Close()"), LOGDEBUG);
 		AtCom.Close();
 	}
-	if (!AtCom.Open(atoi(parser.getValStr("p", 0).c_str()), atoi(parser.getValStr("b", 0).c_str()))){ return FALSE; }
+	if (!AtCom.Open(atoi(parser.getValStr("p", 0).c_str()), atoi(parser.getValStr("b", 0).c_str())))
+	{
+		ProcessLog(_T("open com fail"), LOGDEBUG);
+		return FALSE; 
+	}
 
 	SendAtCmd(parser.getValStr("s", 0).c_str());
 	time_t Endtime;
@@ -52,6 +58,7 @@ bool Exefunction()
 		{
 			strRcbuf[nLen] = 0;
 			szStrGet += strRcbuf;
+			ProcessLog(strRcbuf, LOGDEBUG);
 		}
 	} while (time(NULL) <= Endtime);
 	cout << szStrGet << endl;
@@ -91,6 +98,7 @@ int main(int argc, char* argcv[])
 		help();
 		return TRUE;
 	}
+	
 	//Exec function
 	return Exefunction();
 }
