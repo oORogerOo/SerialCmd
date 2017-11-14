@@ -107,8 +107,8 @@ int CSerial::GetDsr()
 	
 	//return dcb.fDsrSensitivity;
 	DWORD dwModemStatus;
-	BOOL fCTS, fDSR, fRING, fRLSD;
-	
+	//BOOL fCTS, fRING, fRLSD;
+	BOOL fDSR;
 	if (!GetCommModemStatus(m_hIDComDev, &dwModemStatus))
 		// Error in GetCommModemStatus;
 		return -1;

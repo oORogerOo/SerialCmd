@@ -67,11 +67,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="parsingargs.cpp" />
     <ClCompile Include="Serial.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="parsingargs.h" />
+    <ClInclude Include="cmdlineparser.h" />
     <ClInclude Include="Serial.h" />
     <ClInclude Include="StdAfx.h" />
   </ItemGroup>
